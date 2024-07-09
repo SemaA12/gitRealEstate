@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RealEstateManagementSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RealEstateManagementSystem_jar</output-path>
+    <root id="archive" name="RealEstateManagementSystem.jar">
+      <element id="module-output" name="RealEstateManagementSystem" />
+    </root>
+  </artifact>
+</component>
