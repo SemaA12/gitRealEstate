@@ -1,0 +1,160 @@
+\documentclass[a4paper,titlepage]{article} % add >draft< for debugging
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+\usepackage{graphicx} % enable graphics
+\usepackage{titlesec}
+\usepackage{titling} % enable access to metadata from within the document
+\usepackage[cm]{fullpage} % use full A4 page, remove margin
+\usepackage{tabularx} % enhanced tables
+\usepackage{framed} % frames for text
+\usepackage{fancyhdr} % customize header and footer
+\usepackage[ampersand]{easylist} % enhanced lists
+\usepackage[most]{tcolorbox} % colored boxes
+\usepackage{color} % enable color support
+\usepackage[hidelinks]{hyperref} % enable pdf links
+\usepackage{comment} % conditionally display blocks
+\usepackage{datetime2}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{listings}
+
+% Define Colors
+\definecolor{example}{RGB}{198,217,241}
+
+% We do not want auto indentation
+\setlength{\parindent}{0px}
+
+% Settings for the colortables
+\tcbset{
+    center title,
+    colback=example,
+    colframe=black,
+    width=\dimexpr\textwidth\relax,
+    arc=0pt,outer arc=0pt,
+    }
+
+% Content imports
+\graphicspath{ {./img/} }
+% Styling defaults
+\renewcommand{\familydefault}{\sfdefault}
+
+% Remove header from table of contents
+\makeatletter
+\renewcommand\tableofcontents{%
+    \@starttoc{toc}%
+}
+\newcommand\subsubsubsection{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+    
+\newcommand\foursubsection{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize}}       
+\makeatother
+
+% Metadata
+\newcommand{\mytitle}{Requirements document - Real Estate Management System}
+\title{\mytitle}
+\author{Sema Alici}
+
+
+% Set footer
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\fancyhf{} % Remove default header/footer
+\renewcommand{\headrulewidth}{0pt} % Remove strange vertical line from this package
+\cfoot{\mytitle}
+\rfoot{\thepage}
+
+% Bigger line margins
+\renewcommand{\arraystretch}{1.5}
+
+% templates for styling
+\newenvironment{notesBox}
+	{\begin{tcolorbox}[colback=yellow]\begin{center}}
+	{\end{center}\end{tcolorbox}}
+
+
+\newenvironment {fieldsTable}
+				{\tabularx{\textwidth}{@{} | X | p{8cm} | X | @{}}}
+				{\endtabularx}
+
+\newenvironment {errorTable}
+				{\tabularx{\textwidth}{@{} | X | p{14cm} | @{}}}
+				{\endtabularx}
+
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % One single link
+
+% new page after each section
+\newcommand{\sectionbreak}{\clearpage}
+
+% left and right alignment for table columns text
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}                                                                                                                                                              
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}                                                                                                                                                              
+
+\begin{document}
+
+\begin{titlingpage}
+  \centerline{\includegraphics[width=21.59cm]{Header.png}}
+  \vspace{4cm}
+  \Huge
+  \thetitle
+
+  \vspace{1cm}
+  \large
+  
+%%%  vvvvvvVersion  
+\begin{tabularx}{\textwidth}{ X X }
+  \hline
+  Last change date & \today\ \\ \hline
+  Author & Sema Alici \\ \hline
+\end{tabularx}  
+
+\end{titlingpage}
+
+
+
+
+
+\newpage
+\begin{Huge}
+\copyright \space Copyright 2024 Sema Alici
+\end{Huge} \\
+\vspace{1cm}
+
+All rights reserved \\
+
+No part of this document may be reproduced or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, or translated into a different language, without prior written permission of Sema Alici. \\
+
+Although taking all necessary precaution while creating, Sema Alici can’t be held liable for mistakes or omissions in it, and occurring damage or loss of function using the documents’ contents. \\
+
+
+
+\newpage
+\Huge
+Content
+
+\large
+\tableofcontents
+
+\vspace*{1cm}
+
+\large
+\listoffigures
+
+
+\newpage
+
+\input{capcontent.tex}
+
+
+\end{document}
+
