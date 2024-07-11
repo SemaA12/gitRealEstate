@@ -89,7 +89,7 @@
                            <FontAwesomeIcon fill="WHITE" glyphName="HOME" layoutY="96.0" size="2em" />
                            <FontAwesomeIcon fill="WHITE" glyphName="BUILDING" layoutX="43.0" layoutY="96.0" size="2em" wrappingWidth="20.571428298950195" />
                         </AnchorPane>
-                        <Label layoutX="62.0" layoutY="132.0" text="Total Sold Properties" textFill="WHITE">
+                        <Label layoutX="54.0" layoutY="132.0" text="Total Sold Properties" textFill="WHITE">
                            <font>
                               <Font name="Microsoft Sans Serif" size="18.0" />
                            </font>
@@ -105,7 +105,7 @@
                      <AnchorPane prefHeight="168.0" prefWidth="62.0" styleClass="card2-left" stylesheets="@design-dashboard.css">
                         <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="2.0" layoutY="103.0" size="4.5em" />
                      </AnchorPane>
-                     <Label layoutX="70.0" layoutY="132.0" prefHeight="21.0" prefWidth="170.0" text="Total Rental Income" textFill="WHITE">
+                     <Label layoutX="70.0" layoutY="132.0" prefHeight="21.0" prefWidth="170.0" text="Total Rental Income" textFill="WHITE" AnchorPane.rightAnchor="0.0">
                         <font>
                            <Font name="Microsoft Sans Serif" size="18.0" />
                         </font>

@@ -13,5 +13,5 @@ module org.example.realestatemanagementsystem {
     opens org.example.realestatemanagementsystem.data to javafx.fxml;
     exports org.example.realestatemanagementsystem.logic;
     opens org.example.realestatemanagementsystem.logic to javafx.fxml;
-   
+
 }
