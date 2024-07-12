@@ -2189,14 +2189,10 @@ public class DashboardController implements Initializable {
             if (result.isPresent() && result.get() == buttonTypeDelete) {
 
                 try (Connection connect = DBConnection.dbConnection();
-                     PreparedStatement preparePayments = connect.prepareStatement(DBPaymentConstants.DELETE_PAYMENT_BY_PROPERTY_ID);
                      PreparedStatement prepareAdvertisement = connect.prepareStatement(DBAdvertisementConstants.DELETE_ADVERTISEMENT_BY_PROPERTY_ID);
                      PreparedStatement prepareMaintenance = connect.prepareStatement(DBMaintenanceConstants.DELETE_MAINTENANCE_BY_PROPERTY_ID);
                      PreparedStatement prepareProperty = connect.prepareStatement(DBPropertyConstants.DELETE_PROPERTY_BY_ID)
                 ) {
-                    preparePayments.setInt(1, selectedProperty.getId());
-                    preparePayments.executeUpdate();
-
                     prepareAdvertisement.setInt(1, selectedProperty.getId());
                     prepareAdvertisement.executeUpdate();
 
@@ -2378,7 +2374,7 @@ public class DashboardController implements Initializable {
                         try {
                             amount = Double.parseDouble(propertyManagement_rent.getText());
                             size = Double.parseDouble(propertyManagement_size.getText());
-                            if (amount < 0 || size < 0) {
+                            if (amount <= 0 || size <= 0) {
                                 throw new NumberFormatException();
                             }
                         } catch (NumberFormatException e) {

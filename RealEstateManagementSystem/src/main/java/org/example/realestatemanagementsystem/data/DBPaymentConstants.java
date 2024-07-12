@@ -7,6 +7,4 @@ public interface DBPaymentConstants {
     String SELECT_ALL_PAYMENTS = "SELECT * FROM payments";
     String SUM_TOTAL_PAYMENTS =
             "SELECT SUM(amount) AS total FROM payments";
-    String DELETE_PAYMENT_BY_PROPERTY_ID = "DELETE FROM payments WHERE property_id = ?";
-
 }
